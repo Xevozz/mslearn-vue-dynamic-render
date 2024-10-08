@@ -19,22 +19,24 @@
         <hr />
 
         <!-- TODO: Add code to display classes -->
-         <!-- v-for creates a new element for each productClass item + for each Index which uses the :key for display -->
-    <div v-for="(productClass, index) in productClasses" :key = "index" class="row">
-        <div class="column">
-            <!-- {{ }} displays array information encoded -->
-            {{ productClass.name }}
-        </div>
+        <!-- v-for creates a new element for each productClass item + for each Index which uses the :key for display -->
+        <div v-for="(productClass, index) in productClasses" :key = "index" class="row">
+            <div class="column">
+                <!-- {{ }} displays array information encoded -->
+                {{ productClass.name }}
+            </div>
             </div class="column">
-                    <!-- ({{}}) double braces makes it possible to call any valid JavaScript -->
+                <!-- ({{}}) double braces makes it possible to call any valid JavaScript -->
                 $ {{ productClass.price.toLocaleString('en-US') }}
             </div>
-            <!-- More to come -->
+                <!-- More to come -->
+                <button v-if="productClass.earlyBird" class="button">Book early bird!</button>
+                <button v-else class="button">Book now!</button>
+    
+                <div v-show="productClass.seatsAvailable < 10">Almost sold out!</div>
+            </div>
 
-
-
-
-        <img v-bind:src="productImage" v-bind:alt="productImageDescription" :style="productImageStyle" />
+            <img v-bind:src="productImage" v-bind:alt="productImageDescription" :style="productImageStyle" />
     </div>
 
     <script src="./index.js"></script>
