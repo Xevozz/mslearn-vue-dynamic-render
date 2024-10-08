@@ -20,15 +20,15 @@
 
         <!-- TODO: Add code to display classes -->
          <!-- v-for creates a new element for each productClass item + for each Index which uses the :key for display -->
-    </div v-for="(productClass, index) in productClasses" :key = "index" class="row">
+    <div v-for="(productClass, index) in productClasses" :key = "index" class="row">
         <div class="column">
             <!-- {{ }} displays array information encoded -->
-            {{productClass.name}}
+            {{ productClass.name }}
         </div>
             </div class="column">
                     <!-- ({{}}) double braces makes it possible to call any valid JavaScript -->
-                $ {{productClass.price.toLocaleString('en-US') }}
-        </div>
+                $ {{ productClass.price.toLocaleString('en-US') }}
+            </div>
             <!-- More to come -->
 
 
