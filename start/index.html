@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Relecloud Galaxy Tours</title>
     <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- TODO: Import Vue.js core library -->
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 
@@ -18,6 +19,20 @@
         <hr />
 
         <!-- TODO: Add code to display classes -->
+         <!-- v-for creates a new element for each productClass item + for each Index which uses the :key for display -->
+    </div v-for="(productClass, index) in productClasses" :key = "index" class="row">
+        <div class="column">
+            <!-- {{ }} displays array information encoded -->
+            {{productClass.name}}
+        </div>
+            </div class="column">
+                    <!-- ({{}}) double braces makes it possible to call any valid JavaScript -->
+                $ {{productClass.price.toLocaleString('en-US') }}
+        </div>
+            <!-- More to come -->
+
+
+
 
         <img v-bind:src="productImage" v-bind:alt="productImageDescription" :style="productImageStyle" />
     </div>
